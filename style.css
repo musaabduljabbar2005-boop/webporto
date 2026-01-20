@@ -1,4 +1,6 @@
-/* Reset & Base Styles */
+/* =========================================
+   1. RESET & BASE STYLES
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +12,7 @@
     --bg-color: #0f0f0f;
     --card-bg: #1a1a1a;
     --text-color: #e0e0e0;
-    --gold: #d4af37; /* Warna Mewah */
+    --gold: #d4af37; /* Warna Emas Mewah */
     --gold-dim: #aa8c2c;
     --accent: #2c2c2c;
 }
@@ -23,13 +25,15 @@ body {
     overflow-x: hidden;
 }
 
-/* Navbar */
+/* =========================================
+   2. NAVBAR
+   ========================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    background: rgba(15, 15, 15, 0.95);
+    background: rgba(15, 15, 15, 0.95); /* Sedikit transparan */
     position: fixed;
     width: 100%;
     top: 0;
@@ -59,6 +63,7 @@ body {
     color: #fff;
     font-weight: 500;
     transition: 0.3s;
+    font-size: 0.95rem;
 }
 
 .nav-links a:hover {
@@ -66,12 +71,15 @@ body {
 }
 
 .menu-toggle {
-    display: none;
+    display: none; /* Hilang di desktop */
     font-size: 1.5rem;
     cursor: pointer;
+    color: var(--gold);
 }
 
-/* Hero Section */
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
 .hero {
     height: 100vh;
     display: flex;
@@ -81,12 +89,14 @@ body {
     padding: 0 20px;
     background: radial-gradient(circle at center, #1f1f1f 0%, #0f0f0f 100%);
     position: relative;
+    overflow: hidden;
 }
 
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
     margin-bottom: 10px;
+    line-height: 1.2;
 }
 
 .gold-text {
@@ -94,15 +104,22 @@ body {
 }
 
 .verified {
-    color: #1DA1F2; /* Centang Biru */
+    color: #1DA1F2; /* Centang Biru Twitter/IG Style */
     font-size: 0.5em;
     vertical-align: middle;
+    margin-left: 5px;
 }
 
 .nickname {
     font-size: 1.2rem;
     color: #888;
     margin-bottom: 20px;
+}
+
+.description {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: #ccc;
 }
 
 .social-hero a {
@@ -134,13 +151,13 @@ body {
     color: #000;
 }
 
-/* Badminton Floating Element */
+/* Badminton Floating Animation */
 .shuttlecock-floating {
     position: absolute;
     top: 20%;
     right: 10%;
     font-size: 4rem;
-    color: rgba(212, 175, 55, 0.1); /* Gold transparan */
+    color: rgba(212, 175, 55, 0.1);
     animation: float 3s ease-in-out infinite;
     z-index: 0;
 }
@@ -151,7 +168,9 @@ body {
     100% { transform: translateY(0px) rotate(45deg); }
 }
 
-/* Section Common */
+/* =========================================
+   4. COMMON SECTION STYLES
+   ========================================= */
 section {
     padding: 80px 10%;
 }
@@ -164,7 +183,9 @@ section {
     margin-bottom: 50px;
 }
 
-/* About Section */
+/* =========================================
+   5. ABOUT SECTION
+   ========================================= */
 .about-content {
     display: flex;
     align-items: center;
@@ -183,8 +204,8 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%; /* Bulat */
-    filter: grayscale(20%);
+    border-radius: 50%;
+    filter: grayscale(20%); /* Biar agak artistik */
     position: relative;
     z-index: 2;
     border: 3px solid var(--gold);
@@ -218,18 +239,22 @@ section {
 .info-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     background: var(--card-bg);
-    padding: 10px 15px;
+    padding: 15px 20px;
     border-left: 3px solid var(--gold);
     border-radius: 4px;
 }
 
 .info-item i {
     color: var(--gold);
+    width: 20px;
+    text-align: center;
 }
 
-/* Skills Section */
+/* =========================================
+   6. SKILLS SECTION
+   ========================================= */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -238,7 +263,7 @@ section {
 
 .skill-card {
     background: var(--card-bg);
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     border: 1px solid #333;
     transition: 0.3s;
@@ -252,7 +277,8 @@ section {
 .skill-info {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .progress-bar {
@@ -270,7 +296,110 @@ section {
     transition: width 1.5s ease-in-out;
 }
 
-/* Location */
+/* =========================================
+   7. PROJECTS SECTION (BARU)
+   ========================================= */
+.projects {
+    background: #121212; /* Kontras background */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15); /* Efek Glow Mewah */
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.tech-stack span {
+    font-size: 0.75rem;
+    background: #222;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid #444;
+    color: var(--gold);
+}
+
+.btn-project {
+    display: inline-block;
+    padding: 10px 0;
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+    font-weight: 600;
+}
+
+.btn-project:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+/* Style Khusus Coming Soon */
+.coming-soon {
+    opacity: 0.7;
+    border-style: dashed;
+}
+
+.btn-project.disabled {
+    border-color: #555;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.btn-project.disabled:hover {
+    background: transparent;
+    color: #555;
+}
+
+/* =========================================
+   8. LOCATION & FOOTER
+   ========================================= */
 .location {
     text-align: center;
     background: #151515;
@@ -279,27 +408,98 @@ section {
 .address {
     color: #888;
     margin-top: 10px;
+    font-style: italic;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 30px;
+    background: #0f0f0f;
     border-top: 1px solid #333;
     font-size: 0.9rem;
     color: #666;
+}
+
+.social-footer {
+    margin-top: 10px;
 }
 
 .social-footer a {
     color: var(--gold);
     margin: 0 10px;
     text-decoration: none;
+    font-weight: 600;
 }
 
-/* Mobile Responsive */
+/* =========================================
+   9. MOBILE RESPONSIVE & ANIMATION
+   ========================================= */
 @media (max-width: 768px) {
-    .hero-content h1 { font-size: 2rem; }
-    .about-content { text-align: center; }
-    .nav-links { display: none; } /* Simplified for mobile */
-    .menu-toggle { display: block; color: var(--gold); }
+    /* Navbar Adjustment */
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh; /* Full height minus navbar */
+        top: 8vh;
+        background-color: #0f0f0f;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        transform: translateX(100%); /* Sembunyi ke kanan */
+        transition: transform 0.5s ease-in;
+        border-left: 1px solid #333;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        opacity: 0; /* Untuk animasi fade */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hero Text Adjustment */
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Section Padding Adjustment */
+    section {
+        padding: 60px 20px;
+    }
+
+    /* About Section */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-item {
+        justify-content: center;
+    }
+}
+
+/* Class Aktif untuk Mobile Menu (Triggered by JS) */
+.nav-active {
+    transform: translateX(0%);
+}
+
+/* Animasi Fade In untuk Link Menu */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* Animasi Icon Hamburger jadi X */
+.toggle .fa-bars:before {
+    content: "\f00d"; /* Kode font awesome untuk X */
 }
